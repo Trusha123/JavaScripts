@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+            Internal JS Demo
+        </title>
+        <script>
+        //define javascript function
+        console.log(Object.prototype)
+        let employee = new Object();
+        employee.prototype = new Object.create(employee.prototype);
+        console.log(employee.prototype)
+            function add(a,b){
+                return a+b;
+            }
+            //function is itself a object
+            //user defined constructor function
+            function Product(id,name)
+            {
+                this.id=id;
+                this.name=name;
+                this.show = function(){
+                    console.log("Id:" +this.id+ "\tName: " +this.name)
+                }
+            }
+            console.log(Product.prototype)
+
+            let p1 = new Product(22,"Titan watch");
+            console.log(p1.prototype)
+
+            console.log(p1.__proto__.constructor)
+            console.log(Product.prototype.constructor==p1.__proto__.constructor)
+            console.log(Object.getPrototypeOf(p1)==Product.prototype)
+            console.log(Object.getPrototypeOf(p1)==Object.prototype)
+            console.log(Product.prototype==Object.prototype);
+
+        </script>
+    </head>
+    <body>
+        <script>
+            //calling javascript fun
+            let result =add(10,20);
+            document.write("<h2>Addition is  " + result +"</h2>")
+        </script>
+
+    </body>
+</html>

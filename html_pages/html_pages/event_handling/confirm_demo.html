@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script>
+            function confirmpurchase(){
+                let status = window.confirm("Do you want to proceed to buy ?");
+                console.error(status)
+                if(status)
+                {
+                    window.alert("Please be ready for payment process")
+                }
+                else{
+                    window.alert("Product selected will be canceled")
+                }
+            }
+        </script>
+    </head>
+    <body>
+        
+        <button onclick="confirmpurchase()">Buy Product</button>
+    </body>
+
+
+</html>
